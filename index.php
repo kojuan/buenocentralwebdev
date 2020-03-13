@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <script>
     window.onscroll = function() {stickyHeader()};
@@ -23,10 +25,8 @@
 <head>
 <title>Bueno Central</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="assets/js/imageSlider.js"></script>
-<script src="assets/js/automaticSlideShow.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="assets/css/style.css" type="text/css" rel="stylesheet"/>
-
 
 </head>
 <div class="headerOfHeaderContainer">
@@ -44,55 +44,9 @@
     </div>
 </div>
 
-
-
-   
 <body>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <!-- <div class="imageSliderContainer">
-        <ul>
-        <li>
-            <input type="radio" checked="check" name="imgRadioSlide">
-            <div class="slide">
-                <img src="assets/images/image_1.jpg">
-
-            </div>
-        </li>
-
-        <li>
-            <input type="radio" name="imgRadioSlide">
-            <div class="slide">
-                <img src="assets/images/image_2.jpg">
-                <div class="content">
-                    <p>Bueno Central January Employee of the Month</p>
-                </div>
-            </div>
-        </li>
-
-        <li>
-            <input type="radio" name="imgRadioSlide">
-            <div class="slide">
-                <img src="assets/images/image_3.jpg">
-
-            </div>
-        </li>
-
-        <li>
-            <input type="radio" name="imgRadioSlide">
-            <div class="slide">
-                <img src="assets/images/image_4.jpg">
-
-            </div>
-        </li>
-
-
-        </ul>
-    </div> -->
-
+    <br><br><br><br>
 
     <center><div>
     <fieldset>
@@ -105,16 +59,19 @@
     foreach (scandir($filename) as $announcement){
         if ($announcement == "." || $announcement == ".."){
             $counter++;
+            
         } 
         else{
             ?>
             <fieldset>
                 <?php
+                $splitter =  explode(".",$announcement);
                 echo "<div style='background-color:#216583;'><p style='color:#bae9ff'>";
-                echo "<legend>" . $announcement . "</legend><br>";
+                echo "<legend>" . $splitter[0] . "</legend><br>";
+
                 $fileOpen = fopen($filename . $announcement, 'r');
                 $fileRead = fread($fileOpen, 1000);
-                echo $fileRead . "<br><br>";
+                echo $fileRead . "";
                 fclose($fileOpen);
         
                 $file_exist = true;
@@ -132,54 +89,38 @@
     </fieldset>
     </div></center>
 
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 4</div>
-          <img src="assets/images/image_1.jpg" style="width:100%">
-          <div class="text">Logo</div>
-        </div>
-        
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 4</div>
-          <img src="assets/images/image_2.jpg" style="width:100%">
+    <div class="w3-content w3-section" style="max-width:1550px">
+        <img class="mySlides w3-animate-fading" src="assets/images/image_1.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="assets/images/image_2.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="assets/images/image_3.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="assets/images/image_4.jpg" style="width:100%">
+    </div>
 
-        </div>
-        
-        <div class="mySlides fade">
-          <div class="numbertext">3 / 4</div>
-          <img src="assets/images/image_3.jpg"style="width:100%">
+    <script>
+        let myIndex = 0;
+        carousel();
 
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">4 / 4</div>
-            <img src="assets/images/image_4.jpg"style="width:100%">
-          </div>
-        
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        
-        </div>
-        
-        <br>
-        
-        <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span> 
-          <span class="dot" onclick="currentSlide(2)"></span> 
-          <span class="dot" onclick="currentSlide(3)"></span>
-          <span class="dot" onclick="currentSlide(4)"></span> 
-        </div>
+        function carousel() {
+        let i;
+        let x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 5000);    
+        }
+    </script>
 
     <p>
         <button onclick="topFunction()" id="goTopButton" title="Go to top"><img src="assets/images/topImageButton.png"></button>
     </p>
-    <center><img src="assets/images/latestUpdates.png"></center>
     <center>
         Latest merchandise of Bueno Central <br>
         RESERVE NOW <br>
          / button / here
          <br>
-
     </center>
     
     

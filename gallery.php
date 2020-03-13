@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<?php
-session_start();
-?>
+
 
 <script>
     let loadFile = function(event) {

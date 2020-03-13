@@ -2,11 +2,10 @@
 body{
     width:100%;
     margin:auto;
+    padding:0;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    padding:100px 0px;
-    font-size: 10px;
-    font-style: Verdana, Tahoma, sans-serif;
+    background-color: rgb(217, 242, 255);
 }
 
 .headerContainer {
@@ -41,73 +40,4 @@ li{
     float: left;
     margin-left:200px;
     padding-top: 30px;
-}
-
-
-/* ===========================================================
-   ===================== Body style ==========================
-   =========================================================== */ 
-h2 {
-    margin-bottom: 20px;
-    color: #474E69;
-}
-
-   /* ========================================================
-   =================== 2-Column Table ========================
-   =========================================================== */
-
-   * {
-    box-sizing: border-box;
-  }
-
-  /* Create two equal columns that floats next to each other */
-  .column {
-      margin-left: 10px;
-    float: left;
-    width: 48.9%;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) {
-    .column {
-      width: 100%;
-    }
-  }
-
-      /* ========================================================
-   ===================== Social Media Button(s) ========================
-   =========================================================== */
-   .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-  }
-  
-  .fa:hover {
-      opacity: 0.7;
-  }
-  
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-
-  
-/* ====================== CONTACT FORM BOOTSTRAP =================================
-=================================================================================
-=================================================================================*/
-#contact .card:hover i,#contact .card:hover h4{
-    color: #87d37c;
-    margin-left: 0px;
 }

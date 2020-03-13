@@ -10,7 +10,7 @@
                     <h1 class="login-heading">
                     <strong><font face="Arial">ADMIN</strong> Login</h1></font></h1>
                     <!-- WHEN USER AND PASSWORD IS SUBMITTED, IT WILL GO TO THE loginConfirmation.php file -->
-                    <form action="loginConfirmation.php" method="post"> 
+                    <form action="adminpanel.php" method="post"> 
                     <p>
                         <input type="text" name="username" id="username" placeholder="Username" required="required" class="input-txt" />
                     </p>
