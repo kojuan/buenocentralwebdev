@@ -75,17 +75,7 @@ session_start();
                 $fileRead = fwrite($fileOpen, filesize("assets/txt/" . $fileOperation));
                 
                 if (!feof($fileOpen)) {
-                    if (!feof($fileOpen) == "None") {
-                        echo " Nothing to edit.";
-                        ?><script>
-                            function reloadPage(){
-                            location.reload(true);
-                            }
-                        </script> 
-                        <a href="adminpanel.php"><button type="buttonRefresh" onclick="reloadPage();">Click to Reload Page</button></a> 
-                    <?php
-                        die();    
-                    }
+                    
                     $editOperation = $_POST["operationEditt"];
                     $fileOperation = $_POST["filename"];
                     fwrite($fileOpen, $txtDesc);
@@ -114,17 +104,6 @@ session_start();
                 $fileOperation = $_POST['filename'];
                 //THIS LINE WILL DELETE A SINGLE .TXT FILE.
                 if (isset($fileOperation)) {
-                    if (isset($fileOperation) == "None") {
-                        echo " Nothing to delete.";
-                        ?><script>
-                            function reloadPage(){
-                            location.reload(true);
-                            }
-                        </script> 
-                        <a href="adminpanel.php"><button type="buttonRefresh" onclick="reloadPage();">Click to Reload Page</button></a> 
-                    <?php
-                        die();    
-                    }
                     echo " The file " . $fileOperation . " has been deleted.";
                     unlink("assets/txt/". $fileOperation); // DELETE .txt File
                     

@@ -16,8 +16,8 @@
 
         <div class="nav">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="contactform.php">Contact Us</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="#">Contact Us</a></li>
         </div>
     </div>
 </div>
