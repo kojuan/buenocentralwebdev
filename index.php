@@ -25,8 +25,17 @@
 <head>
 <title>Bueno Central</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="assets/css/style.css" type="text/css" rel="stylesheet"/>
+<!-- Google font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+<!-- Bootstrap -->
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min2.css" />
+<!-- Custom stlylesheet -->
+<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 </head>
 <div class="headerOfHeaderContainer">
@@ -89,13 +98,148 @@
     </fieldset>
     </div></center>
 
-    <div class="w3-content w3-section" style="max-width:1550px">
+    <div class="w3-content w3-section" style="max-width:1550px;">
         <img class="mySlides w3-animate-fading" src="assets/images/image_1.jpg" style="width:100%">
         <img class="mySlides w3-animate-fading" src="assets/images/image_2.jpg" style="width:100%">
         <img class="mySlides w3-animate-fading" src="assets/images/image_3.jpg" style="width:100%">
         <img class="mySlides w3-animate-fading" src="assets/images/image_4.jpg" style="width:100%">
     </div>
 
+    
+    <?php
+
+        // define variables and set to empty values
+        $firstname = $surname = $email = $phone = $quantity = $size = $submit = "";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $firstname = test_input($_POST["firstNameReservation"]);
+        $surname = test_input($_POST["surNameReservation"]);
+        $email = test_input($_POST["emailReservation"]);
+        $phone = test_input($_POST["phoneReservation"]);
+        $quantity = test_input($_POST["quantityReservation"]);
+        $size = test_input($_POST["sizeReservation"]);
+        $submit = test_input($_POST["submit"]);
+        }
+
+        function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+        }
+    ?>
+    <center>
+    <div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-1">
+						<div class="booking-form">
+							<form action="reservation_confirm.php" method="post">
+								<div class="booking-cta">
+                                <h2>BC UWAK TSHIRT</h2>
+                                <h1>Make your reservation</h1>
+
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="text" name="firstNameReservation" required>
+											<span class="form-label">First Name</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="text" name="surNameReservation" required>
+											<span class="form-label">Sur Name</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="email" name="emailReservation" required>
+											<span class="form-label">Email</span>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="tel" name="phoneReservation" required>
+											<span class="form-label">Phone</span>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Quantity</span>
+											<select class="form-control" name="quantityReservation">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Size</span>
+											<select class="form-control" name="sizeReservation">
+												<option>XS</option>
+												<option>S</option>
+												<option>M</option>
+												<option>L</option>
+												<option>XL</option>
+												<option>XXL</option>
+												<option>XXXL</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button class="submit-btn" name="submit">Reserve</button>
+                                </div>
+                                <input type="hidden" name="hiddenField" id="hiddenField" value="000000"/> 
+        
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script>
+		$('.form-control').each(function () {
+			floatedLabel($(this));
+		});
+
+		$('.form-control').on('input', function () {
+			floatedLabel($(this));
+		});
+
+		function floatedLabel(input) {
+			var $field = input.closest('.form-group');
+			if (input.val()) {
+				$field.addClass('input-not-empty');
+			} else {
+				$field.removeClass('input-not-empty');
+			}
+		}
+	</script>
+    </center>
+    
+    
+    
+    
+    
     <script>
         let myIndex = 0;
         carousel();
@@ -116,21 +260,7 @@
     <p>
         <button onclick="topFunction()" id="goTopButton" title="Go to top"><img src="assets/images/topImageButton.png"></button>
     </p>
-    <center>
-        Latest merchandise of Bueno Central <br>
-        RESERVE NOW <br>
-         / button / here
-         <br>
-    </center>
-    
-    
-    <!-- <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
-    <center><div class="fb-page" 
-  data-tabs="timeline, events"
-  data-href="https://www.facebook.com/BuenoCentral"
-  data-width="780px"
-  style="width: 800px"></div></center> -->
+
     
     </body>
 
