@@ -50,15 +50,13 @@ session_start();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="assets/css/w3.css">
 <link href="assets/css/style.css" type="text/css" rel="stylesheet"/>
 <!-- Google font -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
 <!-- Bootstrap -->
-<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-<link type="text/css" rel="stylesheet" href="css/bootstrap.min2.css" />
+<!-- <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" /> --> -->
 <!-- Custom stlylesheet -->
-<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 </head>
 <div class="headerOfHeaderContainer">
@@ -138,6 +136,8 @@ session_start();
         <img class="mySlides w3-animate-fading" src="assets/images/image_2.jpg" style="width:100%">
         <img class="mySlides w3-animate-fading" src="assets/images/image_3.jpg" style="width:100%">
         <img class="mySlides w3-animate-fading" src="assets/images/image_4.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="assets/images/image_5.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="assets/images/image_6.jpg" style="width:100%">
     </div>
 
     
