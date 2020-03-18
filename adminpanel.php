@@ -3,6 +3,12 @@
     error_reporting(E_ALL);
     session_start();
     $_SESSION['username'];
+    if (empty($_SESSION['username'])) {
+        // The username session key does not exist or it's empty.
+        header('location: admin_login.php');
+        session_destroy();
+    }
+    else {
 
 ?> 
 <?php
@@ -206,3 +212,4 @@ if(isset($_POST['delete_btn']))
     </body>
     
     </html>
+                <?php } ?>
